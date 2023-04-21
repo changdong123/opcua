@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>opc ua服务器管理</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="manage1.css">
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column" id="toptital">
+                <div class="jumbotron" style="background-image: url(背景图.png);">
+                    <h1 id="title-word">opc ua服务器管理</h1>
+                </div>
+                <div class="col-md-3 column ">
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" id="menu">
+                                        节点管理
+                                            </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+
+                                <div class="panel-body" id="menu1">
+                                    <a href="#addgroup" id="sidea1">
+                                        添加组
+                                    </a>
+                                </div>
+
+                                <div class="panel-body" id="menu2">
+                                    <a href="#addnode" id="sidea2">
+                                        添加节点
+                                   </a>
+                                </div>
+
+                                <div class="panel-body" id="menu3">
+                                    <a href="#deletenode" id="sidea3">
+                                        删除节点
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 column" id="right">
+                    <!--<div id="addgroup">
+                        <div class="alert alert-success alert-dismissable">
+                            <h4>
+                                添加组
+                            </h4>
+                        </div>
+
+                        <form role="form" name="addgroupform">
+                            <div class="form-group">
+                                <label for="text1">parentNameSpace</label><input type="text" class="form-control" id="text1" name="parentNameSpace" />
+                            </div>
+                            <div class="form-group">
+                                <label for="text2">parentNodeId</label><input type="text" class="form-control" id="text2" name="parentNodeId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="text3">identifier</label><input type="text" class="form-control" id="text3" name="identifier" />
+                            </div>
+                            <div class="form-group">
+                                <label for="text4">name</label><input type="text" class="form-control" id="text4" name="name" />
+                            </div>
+                            <button type="submit" class="btn btn-default" id="sub1">确定</button>
+                        </form>
+
+                    </div>-->
+
+                    <div id="addgroup">
+                        <div class="alert alert-success alert-dismissable">
+                            <h4>
+                                添加组
+                            </h4>
+                        </div>
+
+                        <form role="form" id="addgroupform">
+                            <div class="form-group">
+                                <label for="exampleInputText11">parentNameSpace</label><input type="text" class="form-control" id="exampleInputText11" name="parentNameSpace" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText12">parentNodeId</label><input type="text" class="form-control" id="exampleInputText12" name="parentNodeId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText13">identifier</label><input type="text" class="form-control" id="exampleInputText13" name="identifier" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText14">name</label><input type="text" class="form-control" id="exampleInputText14" name="name" />
+                            </div>
+
+                            <button type="submit" class="btn btn-default" id="sub1">确定</button>
+                        </form>
+                    </div>
+
+                    <div id="addnode">
+                        <div class="alert alert-success alert-dismissable">
+                            <h4>
+                                添加节点
+                            </h4>
+                        </div>
+
+                        <form role="form" id="addnodeform">
+                            <div class="form-group">
+                                <label for="exampleInputText1">parentNameSpace</label><input type="text" class="form-control" id="exampleInputText1" name="parentNameSpace" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText2">parentNodeId</label><input type="text" class="form-control" id="exampleInputText2" name="parentNodeId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText3">identifier</label><input type="text" class="form-control" id="exampleInputText3" name="identifier" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText4">name</label><input type="text" class="form-control" id="exampleInputText4" name="name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText5">accessLevel</label><input type="text" class="form-control" id="exampleInputText5" name="accessLevel" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText6">dataType</label><input type="text" class="form-control" id="exampleInputText6" name="dataType" />
+                            </div>
+                            <button type="submit" class="btn btn-default" id="sub2">确定</button>
+                        </form>
+                    </div>
+
+                    <div id="deletenode">
+                        <div class="alert alert-success alert-dismissable">
+                            <h4>
+                                删除节点
+                            </h4>
+                        </div>
+
+                        <form role="form" id="deletenodeform">
+                            <div class="form-group">
+                                <label for="exampleInputText111">namespace</label><input type="text" class="form-control" id="exampleInputText111" name="namespace" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText112">nodeId</label><input type="text" class="form-control" id="exampleInputText112" name="nodeId" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText113">parentNamespace</label><input type="text" class="form-control" id="exampleInputText113" name="parentNamespace" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputText114">parentNodeId</label><input type="text" class="form-control" id="exampleInputText114" name="parentNodeId" />
+                            </div>
+                            <button type="submit" class="btn btn-default" id="sub3">确定</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js "></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js "></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#right").children().hide();
+            $($("#right").children().get(0)).show();
+            $(".panel-body").click(function() {
+                $(this).css("background", "honeydew");
+                $(this).siblings().css("background-color", "azure");
+                $("#right").children().hide();
+                var activeTab = $(this).find("a").attr("href"); //找到所属属性值来识别活跃选项卡和内容 
+                $(activeTab).fadeIn(); //使内容出现
+            });
+
+
+            //json格式的post请求
+            $("#sub1").click(function(){
+                let data = {};
+                var value = $('#addgroupform').serializeArray();
+                $.each(value, function (index, item) {
+                    data[item.name] = item.value;
+                });
+                let json = JSON.stringify(data);
+                /*
+                * 输出：{"type":"test1","ruleId":"test2"}
+                */
+
+                $.ajax({
+                    type:"POST",  //请求方式
+                    url:"http://127.0.0.1:10003/iot/opc/node/group",  //请求路径：页面/方法名字
+                    data: json,     //参数
+                    dataType:"text",
+                    contentType:"application/json; charset=utf-8",
+                    beforeSend:function(XMLHttpRequest){
+                        //$("#tips").text("开始调用后头方法获取图片路径,请等待");
+                        // $("#imgFood").attr("src","image/loading.gif");
+                    },
+                    success:function(msg){  //成功
+                        console.log(msg);
+                        /*$("#imgFood").attr("src",eval("("+msg+")").d);
+                        $("#tips").text("调用方法结束");*/
+                    },
+                    error:function(obj, msg, e){   //异常
+                        alert("OH,NO");
+                    }
+                });
+            });
+
+
+            $("#sub2").click(function(){
+                let data = {};
+                var value = $('#addnodeform').serializeArray();
+                $.each(value, function (index, item) {
+                    data[item.name] = item.value;
+                });
+                let json = JSON.stringify(data);
+                /*
+                * 输出：{"type":"test1","ruleId":"test2"}
+                */
+
+                $.ajax({
+                    type:"POST",  //请求方式
+                    url:"http://127.0.0.1:10003/iot/opc/node",  //请求路径：页面/方法名字
+                    data: json,     //参数
+                    dataType:"text",
+                    contentType:"application/json; charset=utf-8",
+                    beforeSend:function(XMLHttpRequest){
+                        //$("#tips").text("开始调用后头方法获取图片路径,请等待");
+                        // $("#imgFood").attr("src","image/loading.gif");
+                    },
+                    success:function(msg){  //成功
+                        console.log(msg);
+                        /*$("#imgFood").attr("src",eval("("+msg+")").d);
+                        $("#tips").text("调用方法结束");*/
+                    },
+                    error:function(obj, msg, e){   //异常
+                        alert("OH,NO");
+                    }
+                });
+            });
+
+
+            $("#sub3").click(function(){
+                var value = $('#deletenodeform').serializeArray();
+                var params = '?';
+                $.each(value, function (index, item) {
+                    params = params + [item.name] + '=' + item.value + '&';
+                });
+
+                $.ajax({
+                    type:"DELETE",  //请求方式
+                    url:"http://127.0.0.1:10003/iot/opc/node" + params,  //请求路径：页面/方法名字
+                    data: '',     //参数
+                    dataType:"text",
+                    contentType:"application/json; charset=utf-8",
+                    beforeSend:function(XMLHttpRequest){
+                        //$("#tips").text("开始调用后头方法获取图片路径,请等待");
+                        // $("#imgFood").attr("src","image/loading.gif");
+                    },
+                    success:function(msg){  //成功
+                        console.log(msg);
+                        /*$("#imgFood").attr("src",eval("("+msg+")").d);
+                        $("#tips").text("调用方法结束");*/
+                    },
+                    error:function(obj, msg, e){   //异常
+                        alert("OH,NO");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

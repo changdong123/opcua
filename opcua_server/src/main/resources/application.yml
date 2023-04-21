@@ -1,0 +1,17 @@
+#\u7AEF\u53E3
+spring:
+  profiles:
+    active: dev
+server:
+  port: 10003
+logback:
+  level: INFO
+
+
+
+
+
+
+
+
+
